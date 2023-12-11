@@ -8,16 +8,27 @@ import PocketBase from 'pocketbase'
 
 function App() {
 
-  const pb = new PocketBase("http://127.0.0.1:8090/")
+  const pb = new PocketBase('POCKETBASE_CLIENT')
+  const [records,setRecords] = useState([])
+
+  async function getData(){
+    await pb.collection('devices').getFullList().then((res) => setRecords(res));
+    console.log(records)
+  }
 
   useEffect(() => {
-    pb.autoCancellation(false);
-    const records = pb.collection('devices').getFullList().then((res) => console.log(res));
-  })
+    getData()
+  },[])
+
+  
 
   return (
     <>
-      <div></div>
+      <div>
+        {records.map((device) => (
+          <div key={device.id}>{device.id}</div>
+        ))}
+      </div>
     </>
   )
 }
