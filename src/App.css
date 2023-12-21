@@ -34,3 +34,8 @@ button {
     width: 30%;
     margin-inline: auto;
 }
+
+.tag{
+    display:flex;
+    gap: 10px;
+}

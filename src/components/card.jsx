@@ -1,12 +1,28 @@
 
 export default function Card({device}) {
 
-    //convert device object keys to array with Object.Keys, then iterate through length to find value of each field and/or if its blank
-
+    const columns = Object.keys(device.field)
+    const frontCard = columns.slice(0,5)
+    
     return(
     <>
         <article className='container card' key={device.id}>
-           {device.field["Restore Procedure"] !== "" ? <p>{device.field["Restore Procedure"]}</p> : <></>}
+           {frontCard.map((property) => {
+            if(property === "Model") {
+              return
+            } else if(device.field[property] !== ""){
+              return(
+                <div className="tag">
+                <strong>{property}:</strong> <p>{device.field[property]}</p>
+                </div>
+            )
+            } else{
+              return(
+                <></>
+              )
+            }
+           })}
+           <button className="outline">More Info</button>
         </article>
       </>
     )
