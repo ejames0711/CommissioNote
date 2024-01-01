@@ -3,11 +3,17 @@ import '@picocss/pico'
 import './App.css'
 import pb from './lib/pocketbase.js'
 import CardDisplay from './components/cardsdisplay.jsx'
+import Modal from './components/modal.jsx'
 
 
 function App() {
 
   const [devices,setDevices] = useState([])
+  const [modal,setModal] = useState(false)
+
+  const toggleModal = () => {
+    setModal(!modal)
+}
 
   async function getDevices(){
     await pb.collection('devices').getFullList().then((res) => setDevices(res))
@@ -18,8 +24,16 @@ function App() {
   },[])
 
   return (
-    <>
-       <CardDisplay devices={devices} />
+    <>  
+      <h1 className='container tag'>CommissioNote</h1>
+      <Modal 
+      modal={modal}
+      toggleModal={toggleModal}
+      />
+      <CardDisplay 
+      devices={devices}
+      toggleModal={toggleModal}
+      />
     </>
   )
 }

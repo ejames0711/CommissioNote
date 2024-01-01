@@ -4,7 +4,6 @@ html {
 }
 
 body {
-    text-align: center;
     min-height: 100%;
     align-items: center;
     justify-content: center;
@@ -12,22 +11,16 @@ body {
 
 .card {
     padding-inline: 25px;
-    width: 50%;
-    text-align: left;
-    position: relative;
+    width: 35%;
+    text-align: center;
 }
+
 
 h3{
     width: fit-content;
     display: inline-block;
 }
 
-img{
-    width: 300px;
-    left:400px;
-    display: inline-block;
-    position: absolute;
-}
 
 button {
     margin:0;
@@ -37,5 +30,7 @@ button {
 
 .tag{
     display:flex;
+    justify-content: center;
+    text-align: left;
     gap: 10px;
 }

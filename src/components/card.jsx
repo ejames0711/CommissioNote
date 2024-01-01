@@ -1,8 +1,9 @@
 
-export default function Card({device}) {
+export default function Card({device,toggleModal}) {
 
     const columns = Object.keys(device.field)
     const frontCard = columns.slice(0,5)
+
     
     return(
     <>
@@ -22,7 +23,7 @@ export default function Card({device}) {
               )
             }
            })}
-           <button className="outline">More Info</button>
+           <button className="outline" onClick={toggleModal}>More Info</button>
         </article>
       </>
     )
