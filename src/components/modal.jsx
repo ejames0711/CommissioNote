@@ -1,6 +1,7 @@
 
 export default function Modal({modal,toggleModal}) {
 
+    //populate modal data by making api request to db filtered by given specific device when pressing card button
 
     return(
         <dialog open={modal}>
