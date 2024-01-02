@@ -15,7 +15,7 @@ export default function Card({device,toggleModal}) {
               return
             } else if(device.field[property] !== ""){
               return(
-                <div className="tag">
+                <div className="tag" key={property}>
                 <strong>{property}:</strong> <p>{device.field[property]}</p>
                 </div>
             )
@@ -25,7 +25,9 @@ export default function Card({device,toggleModal}) {
               )
             }
            })}
-           <button className="outline" onClick={toggleModal}>More Info</button>
+           <button className="outline" onClick={() => {
+            toggleModal(device)
+          }}>More Info</button>
         </article>
       </>
     )
