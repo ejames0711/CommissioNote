@@ -1,6 +1,5 @@
 html {
     height: 100%;
-
 }
 
 body {
@@ -23,6 +22,11 @@ button {
     margin-inline: auto;
 }
 
+.modal-tag{
+    gap:10px;
+    margin-bottom: 30px;
+}
+
 .tag{
     display:flex;
     justify-content: center;
@@ -43,8 +47,14 @@ button {
 
 .modal{
     text-align: left;
+    width: 40%;
 }
 
 .modal-title{
     margin: 0;
+}
+
+.notes{
+    margin-top: 50px;
+    margin-bottom: 0px;
 }
