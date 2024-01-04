@@ -4,6 +4,8 @@ import './App.css'
 import pb from './lib/pocketbase.js'
 import CardDisplay from './components/cardsdisplay.jsx'
 import Modal from './components/modal.jsx'
+import search from './assets/search.svg'
+import note from './assets/note.svg'
 
 
 function App() {
@@ -30,16 +32,16 @@ function App() {
     getDevices()
   },[])
 
-  // console.log(devices)
+  console.log(devices)
   return (
     <>  
-      <h1 className='container tag'>CommissioNote</h1>
+      <h1 className='container tag'>CommissioNote <img src={note} alt="" className='logo'/></h1>
       <Modal 
       modal={modal}
       toggleModal={toggleModal}
       />
       <div className='search'>
-        <input type="text" className='' />
+        <input type="text"  /> <img src={search} alt="" className='search-img'/> 
       </div>
       <CardDisplay 
       devices={devices}

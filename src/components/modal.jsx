@@ -5,8 +5,6 @@ export default function Modal({modal,toggleModal}) {
     const backCard = properties?.slice(5,properties.length)
     const brand = modal.data.expand?.brand
     
-    console.log(modal)
-    console.log(brand)
     return(
         <dialog open={modal.open}>
             <article className="modal">
