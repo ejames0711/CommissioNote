@@ -4,7 +4,7 @@ export default function ModalNotes({notes}){
     return(
         <div className="notes">
         {notes.map((note) => (
-            <details key={i++}>
+            <details key={i}>
                 <summary>Note {i++}</summary>
                 <p><strong>{note}</strong></p>
             </details>

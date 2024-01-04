@@ -23,14 +23,14 @@ function App() {
 
 
   async function getDevices(){
-    await pb.collection('devices').getFullList().then((res) => setDevices(res))
+    await pb.collection('devices').getFullList({expand:"brand"}).then((res) => setDevices(res))
   }
 
   useEffect(() => {
     getDevices()
   },[])
 
-
+  // console.log(devices)
   return (
     <>  
       <h1 className='container tag'>CommissioNote</h1>

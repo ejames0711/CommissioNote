@@ -1,7 +1,7 @@
 
 export default function Card({device,toggleModal}) {
 
-    const columns = Object.keys(device.field)
+    const columns = Object.keys(device.json)
     const frontCard = columns.slice(0,5)
 
     
@@ -9,14 +9,14 @@ export default function Card({device,toggleModal}) {
     <>
       
         <article className='container card' key={device.id}>
-        <header><strong>{device.field.Model}</strong></header>
+        <header><strong>{device.json.Model}</strong></header>
            {frontCard.map((property) => {
             if(property === "Model") {
               return
-            } else if(device.field[property] !== ""){
+            } else if(device.json[property] !== ""){
               return(
                 <div className="tag" key={property}>
-                <strong>{property}:</strong> <p>{device.field[property]}</p>
+                  <strong>{property}:</strong> <p>{device.json[property]}</p>
                 </div>
             )
             } else{
@@ -25,6 +25,7 @@ export default function Card({device,toggleModal}) {
               )
             }
            })}
+           <p>{device.support_number}</p>
            <button className="outline" onClick={() => {
             toggleModal(device)
           }}>More Info</button>

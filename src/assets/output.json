@@ -1,25 +1,5 @@
 [
-  {
-    "Brand": "Crestron",
-    "Model": "CEN-ODT-C-POE",
-    "DefaultIP": "DHCP",
-    "DefaultCredentials": "admin/admin",
-    "ConfigSoftware": "Web | Toolbox",
-    "SoftwareLink": "",
-    "Manual": "",
-    "ProductPage": "",
-    "PartNumber": "",
-    "RestoreProcedure": "",
-    "ControlPort": "IPID: 41794",
-    "Notes": [
-      ": admin/[no password]",
-      "ftp://ftp.crestron.com/firmware/_files/",
-      "Use Master Installer to install necessary software"
-    ],
-    "Prefix": "",
-    "PortCount": "",
-    "RelatedFiles": ""
-  },
+,
   {
     "Brand": "Crestron",
     "Model": "TS[W/S]-1060[-GV]",
