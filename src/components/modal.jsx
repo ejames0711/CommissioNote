@@ -18,7 +18,7 @@ export default function Modal({modal,toggleModal}) {
                     } else if(modal.data.json[property] !== ""){
                         return(
                         <div className="modal-tag" key={property}>
-                            <strong >{property}:</strong> <p>{modal.data.json[property]}</p>
+                            <strong >{property.replace("_"," ")}: </strong> <p>{modal.data.json[property]}</p>
                         </div>
                     )
                     } else  {

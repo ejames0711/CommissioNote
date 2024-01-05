@@ -39,7 +39,7 @@ function App() {
   console.log(devices)
   return (
     <>  
-      <h1 className='container tag'>CommissioNote <img src={note} alt="" className='logo'/></h1>
+      <h1 className='container title'>CommissioNote <img src={note} alt="" className='logo'/></h1>
       <Modal 
       modal={modal}
       toggleModal={toggleModal}

@@ -39,11 +39,9 @@ button {
     margin-bottom: 30px;
 }
 
-.tag{
+.title{
     display:flex;
     justify-content: center;
-    text-align: left;
-    gap: 10px;
 }
 
 .card {

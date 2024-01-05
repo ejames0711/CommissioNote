@@ -15,8 +15,8 @@ export default function Card({device,toggleModal}) {
               return
             } else if(device.json[property] !== ""){
               return(
-                <div className="tag" key={property}>
-                  <strong>{property}:</strong> <p>{device.json[property]}</p>
+                <div key={property}>
+                  <strong>{property.replace("_"," ")}: </strong> <p>{device.json[property]}</p>
                 </div>
             )
             } else{
