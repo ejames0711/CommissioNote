@@ -4,8 +4,8 @@ import './App.css'
 import pb from './lib/pocketbase.js'
 import CardDisplay from './components/cardsdisplay.jsx'
 import Modal from './components/modal.jsx'
-import search from './assets/search.svg'
 import note from './assets/note.svg'
+import Search from './components/search.jsx'
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
     open: false,
     data: {}
   }) 
+  const [searchData,setSearchData] = useState("")
 
   const toggleModal = (modalData) => {
     setModal({
@@ -22,11 +23,14 @@ function App() {
       data: modalData.collectionId !== undefined ? modalData : {}
     })
   }
-
-
-  async function getDevices(){
-    await pb.collection('devices').getFullList({expand:"brand"}).then((res) => setDevices(res))
+//
+  async function getDevices(searchFilter){
+    await pb.collection('devices').getFullList({
+      expand:"brand",
+      filter: searchFilter ? `json ~ "${searchFilter}"` : 'created<"2024-01-05 00:00:00"'
+    }).then((res) => setDevices(res))
   }
+
 
   useEffect(() => {
     getDevices()
@@ -40,9 +44,11 @@ function App() {
       modal={modal}
       toggleModal={toggleModal}
       />
-      <div className='search'>
-        <input type="text"  /> <img src={search} alt="" className='search-img'/> 
-      </div>
+      <Search 
+      searchData={searchData}
+      setSearchData={setSearchData}
+      getDevices={getDevices}
+      />
       <CardDisplay 
       devices={devices}
       toggleModal={toggleModal}
