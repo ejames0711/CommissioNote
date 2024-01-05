@@ -2,7 +2,7 @@
 export default function Card({device,toggleModal}) {
 
     const columns = Object.keys(device.json)
-    const frontCard = columns.slice(0,5)
+    const frontCard = columns.slice(0,7)
 
     
     return(
