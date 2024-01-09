@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import '@picocss/pico'
 import './App.css'
 import pb from './lib/pocketbase.js'
 import CardDisplay from './components/cardsdisplay.jsx'
@@ -39,7 +38,7 @@ function App() {
   console.log(devices)
   return (
     <>  
-      <h1 className='container title'>CommissioNote <img src={note} alt="" className='logo'/></h1>
+      <h1 className='bg-black '>CommissioNote <img src={note} alt="" className='logo'/></h1>
       <Modal 
       modal={modal}
       toggleModal={toggleModal}
