@@ -38,7 +38,11 @@ function App() {
   console.log(devices)
   return (
     <>  
-      <h1 className='bg-black '>CommissioNote <img src={note} alt="" className='logo'/></h1>
+      <div> 
+        <h1 className='bg-black h-12'>CommissioNote </h1>
+        <img src={note} alt="" className='w-12 h-12'/>
+      </div>
+      
       <Modal 
       modal={modal}
       toggleModal={toggleModal}
