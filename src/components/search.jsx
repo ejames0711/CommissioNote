@@ -9,7 +9,7 @@ export default function Search({searchData,setSearchData,getDevices}) {
 
     return(
         <div className='search'>
-            <input type="text" placeholder='Search...' onChange={handleInput}/><img src={search} alt=""  className='search-img' onClick={() => getDevices(searchData)}/>
+            <input type="text" placeholder='Search Devices...' onChange={handleInput}/><img src={search} alt=""  className='search-img' onClick={() => getDevices(searchData)} />
         </div>
     )
 }

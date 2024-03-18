@@ -26,8 +26,8 @@ function App() {
 //
   async function getDevices(searchFilter){
     await pb.collection('devices').getFullList({
-      expand:"brand",
-      filter: searchFilter ? `json.Model ~ "${searchFilter}"` : 'created<"2024-01-05 00:00:00"'
+      expand:"brands",
+      filter: searchFilter ? `json ~ "${searchFilter}"` : 'created<"2024-01-05 00:00:00"'
     }).then((res) => setDevices(res))
   }
 
