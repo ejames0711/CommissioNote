@@ -7,7 +7,6 @@ export default function Card({device,toggleModal}) {
     
     return(
     <>
-      
         <article className='container card' key={device.id}>
         <header><strong>{device.json.Model}</strong></header>
            {frontCard.map((property) => {
