@@ -22,7 +22,7 @@ function App() {
       data: modalData.collectionId !== undefined ? modalData : {}
     })
   }
-//
+
   async function getDevices(searchFilter){
     await pb.collection('devices').getFullList({
       expand:"brand",
@@ -30,16 +30,15 @@ function App() {
     }).then((res) => setDevices(res))
   }
 
-
   useEffect(() => {
     getDevices()
   },[])
 
   return (
     <>  
-      <div className='flex flex-col justify-center items-center h-screen gap-10'> 
+      <div className={modal.open ? 'flex flex-col justify-center items-center gap-10 w-screen h-screen overflow-y-scroll' : 'flex flex-col justify-center items-center gap-10'}> 
         <div className='flex'>
-          <h1 className='h-12 text-white text-5xl pr-2 font-bold'><a href="/">CommissioNote</a></h1>
+          <h1 className='h-12 pr-2 text-5xl font-bold text-white'><a href="/">CommissioNote</a></h1>
           <img src={note} alt="" className='w-12 h-12'/>
         </div>
       
